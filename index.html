@@ -8,9 +8,64 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-
+    <link rel="shortcut icon" href="img/Floss And Glows Logo.jpg">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+     
     <!-- Custom CSS -->
     <style>
+          /* Loader styles */
+        .loader-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000; /* Ensure it's above everything */
+        }
+        .spinner {
+            border: 4px solid rgba(0,0,0,.1);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border-left-color: #000;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        /* Existing and additional responsive styles */
+        body, .contact-form label, .contact-form button, footer p {
+            background-color: #fff;
+            color: #000;
+        }
+        .navbar, .service-card:hover, .contact-form button:hover {
+            background-color: #000;
+        }
+        .navbar-dark .navbar-toggler-icon, .contact-form button {
+            background-color: #fff;
+        }
+        .jumbotron {
+            background: url('your-hero-image.jpg') center center;
+            background-size: cover;
+            color: skyblue;
+            text-shadow: 2px 2px 4px #000;
+            padding: 100px 0;
+            margin-bottom: 0;
+        }
+        .jumbotron h1, .jumbotron p, .navbar-brand img, .service-card, footer {
+            color: navy;
+        }
+        section {
+            padding: 80px 0;
+        }
+        .bg-light, .gallery-img, #map, footer {
+            background-color: #fff;
+        } 
         body {
             background-color: #fff;
             color: #000;
@@ -479,7 +534,24 @@
             <p>Contact: 9624804096</p>
         </div>
     </footer>
-
+    <div id="loader" class="loader-container">
+        <div class="spinner"></div>
+      </div>
+      
+      <!-- Existing HTML content goes here -->
+      
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+      <script>
+        window.addEventListener('load', function() {
+          const loader = document.getElementById('loader');
+          setTimeout(() => { // Added timeout for demonstration
+            loader.style.display = 'none';
+          }, 500); // You can adjust the timeout duration
+        });
+      </script>
+      
     
     <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
